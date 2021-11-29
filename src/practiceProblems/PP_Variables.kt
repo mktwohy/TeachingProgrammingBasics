@@ -1,13 +1,15 @@
 package practiceProblems
 
 /*
-In Assignments.practiceProblems.practiceProblems.practiceProblems.assignments.main(), add two variables together and print it
+In main(), add two variables together and print it
  */
 fun main(){
-    //declare varibale (num1 and num2) and state type
-    //inititalize values for the variables: num1 = 1, num2 = 2
-    //print
-    var num1: Int = 1
-    var num2: Int = 2
-    println(num1 + num2)
+    //declare variables num1, num2, and sum. All three are of type Int
+
+    //initialize values for num1 and num2 to some arbitrary integer
+
+    // assign the sum of num1 and num2 to sum
+
+    // print sum
+
 }

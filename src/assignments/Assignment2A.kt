@@ -1,6 +1,6 @@
 package assignments
 
-/* Assignment 2
+/* Assignment 2A
 
 Topics:
 - user input
