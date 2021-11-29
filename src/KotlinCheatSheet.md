@@ -3,7 +3,7 @@
   - you can see examples of other languages [here](https://www.geeksforgeeks.org/hello-world-in-30-different-languages/)
     - notice the similarities between each language!
 ```kotlin
-fun assignmentSolutions.practiceProblems.practiceProblems.practiceProblems.assignments.main(){
+fun main(){
     println("Hello World!")
 }
 ```
