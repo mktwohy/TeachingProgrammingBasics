@@ -117,12 +117,19 @@ var d: Boolean = true
 ## If/Else
 - The code within a if-statement's scope will only execute if its condition evaluates to true
 ```kotlin
-    if (canDrink){
-        enterBar()
-    }
-    else{
-        leave()
-    }
+var age: Int            // create age variable
+var hasFakeID: Boolean  // create hasFakeID variable
+var canDrink: Boolean   // create canDrink variable
+age = 21                // age gets 21
+hasFakeID = false       // hasFakeID gets false
+canDrink = age >= 21 || hasFakeID   // canDrink gets age >= 21 OR hasFakeID
+
+if (canDrink){      // if canDrink is true
+    println("Come in, have a drink!")   // print message
+}
+else {              // else (otherwise)
+    println("Get outta here!")          // print this message
+}
 ```
 
 ## While loop
