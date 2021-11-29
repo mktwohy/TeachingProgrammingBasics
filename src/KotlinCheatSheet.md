@@ -13,7 +13,7 @@ fun main(){
 - This questions are often broken into two steps:
     - Declaration
         - questions 1 & 2
-        - ```kotlin
+      ```kotlin
         // General ("create a box called name of type Type"):
         var name: Type
         // Example:
@@ -21,14 +21,14 @@ fun main(){
         ```
     - Initialization
         - question 3
-        - ```kotlin
+      ```kotlin
         // General ("name gets value"):
         name = value
         // Example:
         message = "hello world!"
         ```
     - These two steps can be combined into one line:
-        - ```kotlin
+      ```kotlin
         // General ("create a box called name of type Type with an initial value of value"):
         var name: Type = value
         // Example:
@@ -40,13 +40,13 @@ fun main(){
 - once declared, the type cannot be changed
 - any value assigned to a variable must match its type
     - for example:
-    - ```kotlin
+  ```kotlin
     var x: Int
     x = 3               // this is ok
     x = "hello world!" // this will throw an error
     ```
 - examples of some common types:
-- ```kotlin
+```kotlin
 var a: Float = 3.14f
 var b: Int = 14
 var c: String = "Hello World!"
@@ -72,20 +72,20 @@ var d: Boolean = true
     - less than or equal <=
     - greater than: >
     - greater than or equal: >=
-    - ```kotlin
+  ```kotlin
     var age: Int = 20
     var isUnderage: Boolean = age < 21
     ```
 - logic:
     - AND: &&
     - OR: ||
-    - ```kotlin
+  ```kotlin
     var age: Int = 20
     var hasFakeID: Boolean = true
     var canDrink: Boolean = hasFakeID || (age >= 21)
     ```
 - you can also invert a Boolean value by placing a "!" ("not") in front of it
-    - ```kotlin
+  ```kotlin
     var age: Int = 20
     var isUnderage: Boolean = age < 21
     var isLegalAge: Boolean = !isUnderage
@@ -98,7 +98,7 @@ var d: Boolean = true
     - 1 output (return value)
 - Function Declaration
     -
-    - ```kotlin
+  ```kotlin
     //General:
     fun functionName(inputName: Type): ReturnType {
         // code
@@ -116,7 +116,7 @@ var d: Boolean = true
 # Conditional Control Flow
 ## If/Else
 - The code within a if-statement's scope will only execute if its condition evaluates to true
-- ```kotlin
+```kotlin
     if (canDrink){
         enterBar()
     }
@@ -132,7 +132,7 @@ var d: Boolean = true
     1. initialization: code that initializes sentry
     1. condition: loop repeats if condition is true
     1. update sentry: code to change sentry so condition can be triggered
-- ```kotlin
+```kotlin
 var i: Int = 0              // declare and initialize sentry
 while (i < 5){              // conditional
     println("hello world!")
