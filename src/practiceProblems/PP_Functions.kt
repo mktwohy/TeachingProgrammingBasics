@@ -1,6 +1,8 @@
+package practiceProblems
+
 /*
 Create a function that returns the sum of the two inputs.
-Then, in main, print the result of this function
+Then, in Assignments.practiceProblems.practiceProblems.practiceProblems.assignments.main, print the result of this function
  */
 fun main() {
     var x: Int = 1
