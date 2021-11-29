@@ -162,10 +162,10 @@ println("Hello, \n\tWorld")
     println(message)
     ```
 
-### String Interpolation
+### String Templates
 - programmers are lazy, and String Concatenation is not good enough.
-  - String Interpolation is easier to read because it does not require us to manually break up our string into many chunks
-- to interpolate a single variable, use a $
+  - String Templates are easier to read because it does not require us to manually break up our string into many chunks
+- to include a single variable, use a $
     ```kotlin
     // this program will print "my name is Michael, and I am 20 years old"
     var age: Int
@@ -178,7 +178,7 @@ println("Hello, \n\tWorld")
 
     println(message)
     ```
-- if you want to interpolate more than just a single variable, use a ${}
+- if you want to include more than just a single variable, use a ${}
     ```kotlin
     // this program will print "my name is Michael, and next year I will be 21 years old"
     var age: Int
