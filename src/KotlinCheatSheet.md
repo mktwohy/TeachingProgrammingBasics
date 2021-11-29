@@ -48,10 +48,11 @@ fun assignmentSolutions.practiceProblems.practiceProblems.practiceProblems.assig
 - any value assigned to a variable must match its type
     - for example:
   ```kotlin
-    var practiceProblems.getX: Int
-    practiceProblems.getX = 3               // this is ok
-    practiceProblems.getX = "hello world!" // this will throw an error
-    ```
+    var x: Int
+    x = 3               // this is ok
+    x = "hello world!"  // this will throw an error because the variable is of type Int,
+                        // but the value being assigned is of type String
+  ```
 - examples of some common types:
 ```kotlin
 var a: Float = 3.14f
@@ -102,18 +103,118 @@ var d: Boolean = true
 
 ---
 
+# Strings
+- A String is a "string" of characters (Char)
+  - in other words, text
+- more specifically, it is an Array of Chars (we will learn about Arrays later).
+  - so, the String "Hello World!" looks like this to a computer:
+  
+| 'H' | 'e' | 'l' | 'l' | 'o' | ' ' | 'W' | 'o' | 'r' | 'l' | 'd' | '!' | 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+- A String value must be wrapped with double quotes
+    ```kotlin
+    var s: String
+    s = "hello world!"  // this is good
+    s = hello world!    // this will result in an error
+    ```
+
+### Escape Characters
+- Escape Characters are characters that are otherwise impossible to include in a String
+- delimited by a \ in front of the character
+- some common escape characters:
+  - new line: \n
+  - tab: \t
+  - single quote: \'
+  - double quote: \"
+  - backslash: \\
+```kotlin
+// this program will print:
+// As Jason Sawin once said, "Programmers are lazy"
+
+println("As Jason Sawin once said, \"Programmers are lazy\"")
+```
+```kotlin
+// this program will print:
+// Hello
+//      World!
+
+println("Hello, \n\tWorld")
+```
+### String Concatenation
+- you can use the + operator to add two strings
+  - it creates a brand new String
+    ```kotlin
+    var s: String
+    s = "hello" + ", " + "world!" // s gets the new String, "hello, world!"
+    ```
+- you can also use this to add variables into a String
+    ```kotlin
+    // this program will print "my name is Michael, and I am 20 years old"
+    var age: Int
+    var name: String
+    var message: String
+
+    age = 20
+    name = "Michael"
+    message = "my name is " + name + ", and I am " + age + " years old"
+
+    println(message)
+    ```
+
+### String Interpolation
+- programmers are lazy, and String Concatenation is not good enough.
+  - String Interpolation is easier to read because it does not require us to manually break up our string into many chunks
+- to interpolate a single variable, use a $
+    ```kotlin
+    // this program will print "my name is Michael, and I am 20 years old"
+    var age: Int
+    var name: String
+    var message: String
+
+    age = 20
+    name = "Michael"
+    message = "my name is $name, and I am $age years old"
+
+    println(message)
+    ```
+- if you want to interpolate more than just a single variable, use a ${}
+    ```kotlin
+    // this program will print "my name is Michael, and next year I will be 21 years old"
+    var age: Int
+    var name: String
+    var message: String
+
+    age = 20
+    name = "Michael"
+    message = "my name is $name, and next year I will be ${age + 1} years old"
+
+    println(message)
+    ```
+
+---
+
 # Incrementing
 - incrementing is a common operation that modifies the existing value inside a variable
 - for example, you may want to add 1 to a variable, or multiply a variable by 2
   - really, any arithmetic operator can be used in incrementing
 ```kotlin
-var practiceProblems.getX: Int = 3
-practiceProblems.getX = practiceProblems.getX + 1       // increment by 1
-practiceProblems.getX = practiceProblems.getX - 1       // decrement by 1
-practiceProblems.getX = practiceProblems.getX * 2       // multiply by 2
-practiceProblems.getX = practiceProblems.getX / 2       // divide by 2
+var x: Int = 3
+x = x + 1       // increment by 1
+x = x - 1       // decrement by 1
+x = x * 2       // multiply by 2
+x = x / 2       // divide by 2
 ```
-
+- programmers are lazy, so there is a shorthand for this: operator assignment
+  - This syntax can be confusing for beginner programmers, so you will not use it for the first few months
+  - Intellij will give you yellow squiggles for not using it. ignore this for now. 
+```kotlin
+var x: Int = 3
+x += 1       // increment by 1
+x -= 1       // decrement by 1
+x *= 2       // multiply by 2
+x /= 2       // divide by 2
+```
 ---
 
 # Functions
@@ -130,8 +231,8 @@ practiceProblems.getX = practiceProblems.getX / 2       // divide by 2
         return someValue
     }
     // Examples:
-    fun sum(practiceProblems.getX: Int, y: Int): Int{
-        return practiceProblems.getX + y
+    fun sum(x: Int, y: Int): Int{
+        return x + y
     }
     fun displayRules(){
         println("You must be 21 years old or have a fake ID")
@@ -143,6 +244,17 @@ practiceProblems.getX = practiceProblems.getX / 2       // divide by 2
 # Conditional Control Flow
 ## If/Else
 - The code within a if-statement's scope will only execute if its condition evaluates to true
+```kotlin
+var hasChangedIdentity: Boolean
+hasChangedIdentity = true
+
+if (hasChangedIdentity){
+    println("I am McLovin")
+}
+else{
+    println("I am Fogell")
+}
+```
 ```kotlin
 // declare variables
 var age: Int                            // create age variable
@@ -171,8 +283,8 @@ else {                                  // else (otherwise),
     1. update sentry: code to change sentry so condition can be triggered
 ```kotlin
 var i: Int = 0              // declare and initialize sentry
-while (i < 5){              // conditional
-    println("hello world!")
+while (i < 5){              // conditional (check that condition is still true)
+    println("i: $i")        // print current value of i
     i = i + 1               // update sentry
 }
 ```
