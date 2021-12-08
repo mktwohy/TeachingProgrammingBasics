@@ -1,5 +1,5 @@
 import kotlin.random.Random
-
+import Color.*
 /*
 For this assignment, you will be building a simple game of rock-paper-scissors. In our implementation of this game,
 1 corresponds to rock, 2 to paper, and 3 to scissors.
@@ -25,7 +25,26 @@ var compThrow: Int = Random.nextInt(1, 4) // generate random number that could b
  */
 
 
-fun main() {
+enum class Color{
+    RED,
+    YELLOW,
+    BLUE,
+}
 
+fun nextColor(color: Color) =
+    when(color){
+        RED     -> YELLOW
+        YELLOW  -> BLUE
+        BLUE    -> RED
+    }
+
+fun main() {
+    var color = RED
+
+    repeat(10){
+        println(color)
+        color = nextColor(color)
+
+    }
 }
 
