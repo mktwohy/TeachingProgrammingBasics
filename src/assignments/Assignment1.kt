@@ -1,4 +1,7 @@
+package assignments
+
 /* Assignment 1
+
 Topics:
 - variables
 - using temp variables
