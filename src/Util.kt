@@ -19,6 +19,16 @@ fun getFloatInput(message: String): Float{
 }
 
 /**
+ * Function to get Float input from user
+ * @param message prompt that will be printed before user inputs their answer
+ * @return Float value that user inputs
+ */
+fun getBooleanInput(message: String): Boolean{
+    print(message)
+    return readLine()!!.toBoolean()
+}
+
+/**
  * Function to get Int input from user
  * @param message prompt that will be printed before user inputs their answer
  * @return Int value that user inputs
