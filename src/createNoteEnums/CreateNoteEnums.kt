@@ -2,41 +2,70 @@ package createNoteEnums
 
 import java.io.File
 
-// note to [freq, prev, next]
-val noteToAttributes = mutableMapOf<String, List<String>>()
+// spreadsheet from https://pages.mtu.edu/~suits/NoteFreqCalcs.html
 
-data class LineData(
-    val note: String,
+data class NoteData(
     val freq: String,
-    val waveLength: String,
+    val next: String,
+    val prev: String
 )
 
-fun getLineData(line: String): LineData{
-    var (note, freq, waveLength) = line
-        .removePrefix(" ")
-        .removeSuffix("\n")
-        .split(' ')
-    note = note.split("/").first()  // only want sharp, not flat
-    return LineData(note, freq, waveLength)
+fun File.splitByLine() =
+    this.readText()
+        .split('\n')
+        .map { it.removeSuffix("\n") }
+
+fun generateText(noteToNoteData: List<Pair<String, NoteData>>): String{
+    val sb = StringBuilder()
+    noteToNoteData.forEach{ (note, noteData) ->
+        sb.append(
+            note,
+            " (",
+            noteData.freq,
+            ", ",
+            noteData.next,
+            ", ",
+            noteData.prev,
+            "),\n"
+        )
+    }
+    return sb.toString()
 }
 
+fun String.formatNote() =
+    if ('#' in this)
+        this.replace("#", "s").substring(0..2)
+    else
+        "${this[0]}_${this[1]}".substring(0..2)
 
-fun initMap(){
-    val dataSrc = File("dataSource.txt").readText()
-    val lines = dataSrc.split('\n')
-    val lineData = lines.map { getLineData(it) }
-    lineData.forEachIndexed{ i, cur ->
-        val prev = if (i == 0) null else lineData[i - 1]
-        val next = if (i == lineData.indices.last) null else lineData[i + 1]
+fun getPrevNote(notes: List<String>, i: Int) =
+    if (i == 0) "null"
+    else notes[i - 1]
 
-        val freq = cur.freq
-        val prevNote = prev?.note ?: "null"
-        val nextNote = next?.note ?: "null"
-        noteToAttributes[cur.note] = listOf(freq, prevNote, nextNote)
+fun getNextNote(notes: List<String>, i: Int) =
+    if (i == notes.indices.last) "null"
+    else notes[i + 1]
+
+fun main() {
+    val path = System.getProperty("user.dir") + "/src/createNoteEnums"
+    val notes = File("$path/Notes.txt")
+        .splitByLine()
+        .map { it.formatNote() }
+    val freqs = File("$path/Frequencies.txt")
+        .splitByLine()
+        .map { it.toDouble() }
+        .map { it.toString() + 'f' }
+
+    val noteToNoteData = notes.mapIndexed { i, note ->
+        note to NoteData(
+                freqs[i],
+                getPrevNote(notes, i),
+                getNextNote(notes, i)
+            )
+    }
+
+    with(File("NoteEnums.txt")){
+        writeText(generateText(noteToNoteData))
+        createNewFile()
     }
 }
-
-fun writeMapToFile(){
-
-}
-

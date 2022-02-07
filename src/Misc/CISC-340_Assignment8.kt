@@ -1,5 +1,5 @@
-/*
-The first program is to request the user to enter a byte of data and then create the 12-bit Hamming code as described in
+package Misc/*
+The first program is to request the user to enter a byte of data Misc.and then create the 12-bit Hamming code as described in
 your text (see above).  The program is to then output this (with an appropriate label) in hex.
  */
 // masks (if indexing from 1)

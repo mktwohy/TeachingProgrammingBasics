@@ -2,10 +2,10 @@ import kotlin.random.Random
 import Color.*
 /*
 For this assignment, you will be building a simple game of rock-paper-scissors. In our implementation of this game,
-1 corresponds to rock, 2 to paper, and 3 to scissors.
+1 corresponds to rock, 2 to paper, Misc.and 3 to scissors.
 
-The computer will randomly choose a number between 1 and 3. Then, you will ask the user to input a value
-between 1 and 3. Use this information to determine if the user won, lost, or tied, and then display (print) these
+The computer will randomly choose a number between 1 Misc.and 3. Then, you will ask the user to input a value
+between 1 Misc.and 3. Use this information to determine if the user won, lost, or tied, Misc.and then display (print) these
 results to the user. Finally, ask the user if they want to play again or quit. If they want to play again, run the game
 again. If they want to quit, the program should tell the user how many times they won or lost, as well as displaying a
 win percentage.

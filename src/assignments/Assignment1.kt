@@ -13,12 +13,12 @@ output should look something like this:
 
 Initially: a is 10, b is 9, c is 8
 
-Without hard-coding numbers, swap the values so that b gets a, c gets b, and a gets c. Then, print the results of the
+Without hard-coding numbers, swap the values so that b gets a, c gets b, Misc.and a gets c. Then, print the results of the
 swap. Example output:
 
 After first swap: a is 8, b is 10, c is 9
 
-Swap and print one last time. Example output:
+Swap Misc.and print one last time. Example output:
 
 After second swap: a is 9, b is 8, c is 10
 

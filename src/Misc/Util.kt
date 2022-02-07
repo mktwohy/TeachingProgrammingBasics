@@ -1,3 +1,5 @@
+package Misc
+
 /**
  * Function to get Float input from user
  * @param message prompt that will be printed before user inputs their answer

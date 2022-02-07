@@ -1,14 +1,14 @@
 package practiceProblems
 
 /*
-In main(), add two variables together and print it
+In Misc.main(), add two variables together Misc.and print it
  */
 fun main(){
-    //declare variables num1, num2, and sum. All three are of type Int
+    //declare variables num1, num2, Misc.and sum. All three are of type Int
 
-    //initialize values for num1 and num2 to some arbitrary integer
+    //initialize values for num1 Misc.and num2 to some arbitrary integer
 
-    // assign the sum of num1 and num2 to sum
+    // assign the sum of num1 Misc.and num2 to sum
 
     // print sum
 

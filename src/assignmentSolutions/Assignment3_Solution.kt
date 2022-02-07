@@ -1,7 +1,7 @@
 package assignmentSolutions
 
-import getCharInput
-import getIntInput
+import Misc.getCharInput
+import Misc.getIntInput
 import kotlin.random.Random
 
 /* Assignment 3
@@ -16,10 +16,10 @@ Topics:
 - nullable types
 
 For this assignment, you will be building a simple game of rock-paper-scissors. In our implementation of this game,
-1 corresponds to rock, 2 to paper, and 3 to scissors.
+1 corresponds to rock, 2 to paper, Misc.and 3 to scissors.
 
-The computer will randomly choose a number between 1 and 3. Then, you will ask the user to input a value
-between 1 and 3. Use this information to determine if the user won, lost, or tied, and then display (print) these
+The computer will randomly choose a number between 1 Misc.and 3. Then, you will ask the user to input a value
+between 1 Misc.and 3. Use this information to determine if the user won, lost, or tied, Misc.and then display (print) these
 results to the user. Finally, ask the user if they want to play again or quit. If they want to play again, run the game
 again. If they want to quit, the program should tell the user how many times they won or lost, as well as displaying a
 win percentage.
@@ -39,16 +39,16 @@ fun main() {
         var compThrow: Int = Random.nextInt(1, 4) // generate random number that could be 1, 2, or 3
 
         // ask user for input. If they enter an invalid input, keep asking until they enter a valid one.
-        var userThrow: Int = getIntInput("\n\nEnter 1 for rock, 2 for paper, and 3 for scissors: ")
+        var userThrow: Int = getIntInput("\n\nEnter 1 for rock, 2 for paper, Misc.and 3 for scissors: ")
         while(userThrow !in 1..3){
             println("\tInvalid input.")
-            userThrow = getIntInput("Enter 1 for rock, 2 for paper, and 3 for scissors: ")
+            userThrow = getIntInput("Enter 1 for rock, 2 for paper, Misc.and 3 for scissors: ")
         }
 
         // create variable that tells if user won (true), lost (false), or tied (null). initialize this as false
         var win: Boolean? = false
 
-        // look throw all combinations of user and computer throws, and assign win variable according to the case it reaches
+        // look throw all combinations of user Misc.and computer throws, Misc.and assign win variable according to the case it reaches
         if (userThrow == 1){
             if (compThrow == 1){    // rock vs rock
                 win = null

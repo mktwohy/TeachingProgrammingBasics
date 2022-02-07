@@ -1,3 +1,5 @@
+package Misc
+
 fun main() {
     // create 3 variables:
     // age, which is type Int

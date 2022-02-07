@@ -3,7 +3,7 @@
   - you can see examples of other languages [here](https://www.geeksforgeeks.org/hello-world-in-30-different-languages/)
     - notice the similarities between each language!
 ```kotlin
-fun main(){
+fun Misc.main(){
     println("Hello World!")
 }
 ```
@@ -150,44 +150,44 @@ println("Hello, \n\tWorld")
     ```
 - you can also use this to add variables into a String
     ```kotlin
-    // this program will print "my name is Michael, and I am 20 years old"
+    // this program will print "my name is Michael, Misc.and I am 20 years old"
     var age: Int
     var name: String
     var message: String
 
     age = 20
     name = "Michael"
-    message = "my name is " + name + ", and I am " + age + " years old"
+    message = "my name is " + name + ", Misc.and I am " + age + " years old"
 
     println(message)
     ```
 
 ### String Templates
-- programmers are lazy, and String Concatenation is not good enough.
+- programmers are lazy, Misc.and String Concatenation is not good enough.
   - String Templates are easier to read because it does not require us to manually break up our string into many chunks
 - to include a single variable, use a $
     ```kotlin
-    // this program will print "my name is Michael, and I am 20 years old"
+    // this program will print "my name is Michael, Misc.and I am 20 years old"
     var age: Int
     var name: String
     var message: String
 
     age = 20
     name = "Michael"
-    message = "my name is $name, and I am $age years old"
+    message = "my name is $name, Misc.and I am $age years old"
 
     println(message)
     ```
 - if you want to include more than just a single variable, use a ${}
     ```kotlin
-    // this program will print "my name is Michael, and next year I will be 21 years old"
+    // this program will print "my name is Michael, Misc.and next year I will be 21 years old"
     var age: Int
     var name: String
     var message: String
 
     age = 20
     name = "Michael"
-    message = "my name is $name, and next year I will be ${age + 1} years old"
+    message = "my name is $name, Misc.and next year I will be ${age + 1} years old"
 
     println(message)
     ```
@@ -218,7 +218,7 @@ x /= 2       // divide by 2
 ---
 
 # Functions
-- Functions allow you to reuse code and break up your program into smaller chunks
+- Functions allow you to reuse code Misc.and break up your program into smaller chunks
 - functions can (but do not _need_ to) have:
     - 1 or more inputs (parameters)
     - 1 output (return value)
@@ -282,7 +282,7 @@ else {                                  // else (otherwise),
     1. condition: loop repeats if condition is true
     1. update sentry: code to change sentry so condition can be triggered
 ```kotlin
-var i: Int = 0              // declare and initialize sentry
+var i: Int = 0              // declare Misc.and initialize sentry
 while (i < 5){              // conditional (check that condition is still true)
     println("i: $i")        // print current value of i
     i = i + 1               // update sentry

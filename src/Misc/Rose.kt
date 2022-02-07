@@ -1,4 +1,4 @@
-
+package Misc
 
 fun main() {
     var x: Int  // declaration

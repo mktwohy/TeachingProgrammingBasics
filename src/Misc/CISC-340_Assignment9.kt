@@ -1,4 +1,4 @@
-import assignmentSolutions.calculateTip
+package Misc
 
 // Amdahl's Law: maximum speedup = 1 / (s + (1-s)/n)
 fun main() {
