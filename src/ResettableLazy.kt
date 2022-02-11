@@ -11,7 +11,7 @@ class ResettableLazy<T>(
     private var cache: T? = null
 
     /** Invalidates cache.
-     * This ensures that, the next time [value] is accessed, it will recalculate cache by re-invoke initializer
+     * This ensures that, the next time [value] is accessed, it will recalculate cache by re-invoking [initializer]
      */
     fun reset(){
         cache = null
